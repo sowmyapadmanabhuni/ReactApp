@@ -1,17 +1,35 @@
 // import logo from './logo.svg';
 import React,{ Component } from 'react';
 import './App.css';
+import { Route, Switch,BrowserRouter as Router,Redirect } from 'react-router-dom';
+
+import Login from './Components/Login';
 import Home from './Components/Home';
+import SignUp from './Components/SignUp';
+import Registration from './Components/Registration';
+import Dashboard from './Components/Dashboard';
 
 class App extends Component{
  render(){
    return(
-     <div className = "App">
-       <Home/>
-     </div>
+     <>
+    {/* <div> */}
+    <Router>
+      <Switch>
+        <Route exact path="/" component={Home} />
+        <Route path="/login" component={Login} />
+        <Route path="/signup" component={SignUp} />
+        <Route path="/register" component ={Registration}/>
+        <Route path ="/dashboard" component={Dashboard}/>
+        <Redirect to="/" />
+      </Switch>
+    </Router>       
+    {/* </div>  */}
+    </>
    );
  }
 }
+
 
 
 // function App() {

@@ -1,0 +1,100 @@
+import React from 'react';
+
+var nextBtn, prevBtn;
+
+
+function changeStep(btn){
+const steps = Array.from(document.querySelectorAll('form .step'));
+nextBtn = document.querySelectorAll('form .next-btn');
+prevBtn = document.querySelectorAll('form .previous-btn');
+const form = document.querySelector('form');
+
+ let index = 0;
+ const active = document.querySelector('form .step.active');
+ index = steps.indexOf(active);
+ console.log("onclick"+index);
+ console.log("steps ", steps);
+ steps[index].classList.remove('active');
+ if(btn === 'next'){
+   index ++;
+   console.log("inde ", index);
+ }else if(btn === 'prev'){
+   index --;
+ }
+ steps[index].classList.add('active');
+ console.log(index);
+}
+
+const Registration =() =>{
+  return(
+  <section>
+    <div className ="container">
+      <form>
+        <div className = "step step-1 index active">
+          <div className ="form-group">
+            <label htmlFor ="firstName">First Name</label>
+            <input type ="text" id = "firstName" name ="firstName"/>
+          </div>
+          <div className ="form-group">
+            <label htmlFor ="lastName">last Name</label>
+            <input type ="text" id = "lastName" name ="lastName"/>
+          </div>
+          <div className = "form-group">
+              <label htmlFor="email">Email</label>
+              <input type="email" id ="email" name ="email"/>
+            </div>
+            <div className = "form-group">
+              <label htmlFor="phone">Phone Number</label>
+              <input type="number" id ="phone" name ="phone-number"/>
+            </div>
+          <button type ="button" className ="next-btn" onClick={()=> changeStep('next')}>Next</button>
+        </div>
+        <div className ="step step-2">
+        <div className = "form-group">
+              <label htmlFor="storename">Store Name</label>
+              <input type="text" id ="storename" name ="store-name"/>
+            </div>
+            <div className='form-group'>
+              <label htmlFor='storeaddress'>Store Address</label>
+              <input type='text' id ='storeaddress' name = 'store-address'/>
+            </div>
+            <div className = "form-group">
+              <label htmlFor="storeaddress1">Store Address1</label>
+              <input type="text" id ="storeaddress1" name ="store-address1"/>
+            </div>
+            <div className = "form-group">
+              <label htmlFor="storeaddress2">Store Address2</label>
+              <input type="text" id ="storeaddress2" name ="store-address2"/>
+            </div>
+            <button type ="button" className ="previous-btn" onClick={()=> changeStep('prev')}>Prev</button>
+            <button type ="button" className ="next-btn" onClick={()=> changeStep('next')}>Next</button>
+        </div>
+
+        <div className ="step step-3">
+            <div className = "form-group">
+              <label htmlFor="country">Country</label>
+              <input type="text" id ="country" name ="country"/>
+            </div>
+            <div className='form-group'>
+              <label htmlFor='state'>State</label>
+              <input type='text' id ='state' name = 'state'/>
+            </div>
+            <div className = "form-group">
+              <label htmlFor="city">City</label>
+              <input type="text" id ="city" name ="city"/>
+            </div>
+            <div className = "form-group">
+              <label htmlFor="pincode">PinCode</label>
+              <input type="number" id ="pincode" name ="pincode"/>
+            </div>
+            <button type ="button" className ="previous-btn"onClick={()=> changeStep('prev')}>Prev</button>
+            <button type ="button" className ="submit-btn">Submit</button>
+        </div>
+      
+      </form>
+    </div>
+  </section>
+)}
+
+
+export default Registration;
