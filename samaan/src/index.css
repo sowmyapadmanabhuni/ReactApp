@@ -328,7 +328,6 @@ nav.menu {
 	transition: .3s all;
 }
 
-
 nav.menu > a {
     display: block;
     padding: 5px;
@@ -337,7 +336,7 @@ nav.menu > a {
     text-transform: uppercase;
 }
 main {
-	width: 100%;
+	/* width: 100%; */
 	padding: 30px;
 	box-sizing: border-box;
   margin-left: 300px;
@@ -345,23 +344,21 @@ main {
 .menu_show {
 	left: 0!important;
 } 
-.dashboardMenu{
-  /* float:left; */
-  /* margin-top:40px;width: 20%; max-width: 200px;margin-left: 0px; */
+/* .dashboardMenu{
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(265px, 1fr));
   grid-auto-rows: 94px;
   grid-gap: 20px;
   margin: 20px;
   width: 40%;
-}
-.overviewcard {
+} */
+/* .overviewcard {
   display: flex;
   align-items: center;
   justify-content: space-between;
   padding: 20px;
   background-color: #d3d3;
-}
+} */
 
 @media screen and (max-width: 425px) {
 	header h1 {
@@ -374,4 +371,51 @@ main {
 		left: -100%; 
 	}
   
+}
+
+
+/* Dashboard new  */
+/* Simple dashboard grid CSS */
+
+/* Assign grid instructions to our parent grid container */
+/* .grid-container {
+  display: grid;
+  grid-template-columns: 240px 1fr;
+  grid-template-rows: 50px 1fr 50px;
+  grid-template-areas:
+    "sidenav header"
+    "sidenav main"
+    "sidenav footer";
+  height: 100vh;
+} */
+
+/* Give every child element its grid name */
+/* .header {
+  grid-area: header;
+  background-color: #648ca6;
+}
+
+.sidenav {
+  grid-area: sidenav;
+  background-color: #394263;
+}
+
+.main {
+  grid-area: main;
+  background-color: #8fd4d9;
+} */
+.main-overview {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(265px, 1fr)); /* Where the magic happens */
+  grid-auto-rows: 94px;
+  grid-gap: 20px;
+  margin: 20px;
+}
+
+.overviewcard {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 20px;
+  background-color: #d3d3;
 }
