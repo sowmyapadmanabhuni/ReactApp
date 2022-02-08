@@ -79,7 +79,8 @@ const Registration =(props) =>{
               <option value="customer">Customer</option>  
               <option value="storeowner">StoreOwner</option>
             
-        </select> {
+              </select> 
+        {
           selectedClient === 'storeowner' ?
             <div>
               <div className = "form-group">
@@ -149,29 +150,13 @@ const Registration =(props) =>{
               <input type="number" id ="pincode" name ="pincode"/>
             </div>
             <button type ="button" className ="previous-btn"onClick={()=> changeStep('prev')}>Prev</button>
-            {/* <button type ="button" className ="next-btn" onClick={()=> changeStep('next')}>Next</button> */}
             <Link to="/login">
             <button type ="button" className ="submit-btn">Submit</button>
             </Link>
            
         </div>
       
-        {/* <div className ="step step-4">
-            <div className = "form-group">
-              <label htmlFor="gstin">GSTIN</label>
-              <input type="text" id ="gstin" name ="gstin"/>
-            </div>
-            <div className='form-group'>
-              <label htmlFor='pan'>PanNumber</label>
-              <input type='text' id ='pan' name = 'pan'/>
-            </div>
-          
-            <button type ="button" className ="previous-btn"onClick={()=> changeStep('prev')}>Prev</button>
-            <Link to="/login">
-            <button type ="button" className ="submit-btn">Submit</button>
-            </Link>
-          
-        </div> */}
+      
       </form>
       
       {isOpen && <Popup
